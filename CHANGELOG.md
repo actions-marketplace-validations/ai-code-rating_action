@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-10-12: v1.0.2, js-yaml 5
+
+- Re-synced `lib/` from the site, which updated the YAML parser in `lib/js-yaml.cjs` from js-yaml 4 to 5.4.3. Only that file changed. The parts the checks use (`load`, `CORE_SCHEMA`, which keeps dates as written, and the error's line number) work as before, and all tests pass.
+- One stricter behaviour: a complex YAML key in the front matter, such as `? [a]`, used to be quietly turned into the field `a`, which passed with a note. It's now an error, "The front matter isn't valid YAML".
+- Some YAML errors are worded differently. For example, an unclosed `[` now reports "deficient indentation" instead of "missed comma between flow collection entries", on the same line as before.
+
 ## 2026-10-12: Licence and CLAUDE.md, No Release
 
 - Added the email address to the copyright line in `LICENSE`, so it reads `Copyright (c) 2026 Greg Chetcuti <greg@chetcuti.com>`.
