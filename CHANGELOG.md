@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-12: Dependabot, No Release
+
+- Added `.github/dependabot.yml` so Dependabot checks the actions used in `.github/workflows/test.yml` (`actions/checkout` and `actions/setup-node`) once a month and opens one grouped pull request when new versions are out. New releases wait 7 days before they're proposed. Security fixes come as their own pull requests and don't wait. Its updates only touch the repo's own test workflow, not the Action, so there's no new release.
+
 ## 2026-10-09: v1.0.1, Synced Wording
 
 - Re-synced `lib/` from the site, which changed punctuation in the level descriptions, an example, and a comment in the checks. Wording only: no check, level, or result changes, and all tests pass.
