@@ -32,7 +32,14 @@ To try the Action by hand on a folder: `GITHUB_WORKSPACE=/path/to/repo node inde
 
 ## Releases
 
-Tag each release `vX.Y.Z` and move the major tag (`v1`) to it, since users reference `@v1`. A change to the checks or the levels (for example a new spec version) is a new release.
+Tag each release `vX.Y.Z` and move the major tag (`v1`) to it, since users reference `@v1`. A change to the checks, the levels (for example a new spec version), or the bundled js-yaml is a new release.
+
+After the commit is pushed, the steps are:
+
+1. Tag it with lightweight tags, like the existing ones: `git tag vX.Y.Z <commit>` and `git tag -f v1 <commit>`.
+2. Push the new tag with `git push public vX.Y.Z`.
+3. Move `v1` with `git push --force public v1`. This is a force push, so it waits for Greg's go-ahead, separately from the normal push.
+4. Create a GitHub release, which the Marketplace listing reads: `gh release create vX.Y.Z --title vX.Y.Z --verify-tag --latest --notes-file -`, with the version's `CHANGELOG.md` bullets on stdin.
 
 ## Commits
 

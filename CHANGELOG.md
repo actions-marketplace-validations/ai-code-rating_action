@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-12: Release Steps, No Release
+
+- `CLAUDE.md`'s Releases section now lists the release steps after the commit is pushed: lightweight tags, pushing the new version tag, the force push that moves `v1` (which waits for Greg's go-ahead), and the GitHub release the Marketplace listing reads, with the changelog bullets as its notes. It also says an update to the bundled js-yaml is a new release. Docs only, so there's no new release.
+
 ## 2026-10-12: v1.0.2, js-yaml 5
 
 - Re-synced `lib/` from the site, which updated the YAML parser in `lib/js-yaml.cjs` from js-yaml 4 to 5.4.3. Only that file changed. The parts the checks use (`load`, `CORE_SCHEMA`, which keeps dates as written, and the error's line number) work as before, and all tests pass.
