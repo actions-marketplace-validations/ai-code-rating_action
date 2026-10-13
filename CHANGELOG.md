@@ -5,6 +5,7 @@
 - Added the email address to the copyright line in `LICENSE`, so it reads `Copyright (c) 2026 Greg Chetcuti <greg@chetcuti.com>`.
 - Filled gaps in `CLAUDE.md`: the shape of the results the checks return, how the test cases are laid out, how to run the Action by hand, and what `dependabot.yml` and `CHANGELOG.md` are for. It also says the Claude Code commit trailer is only for commits where Claude changed code. Docs only, so there's no new release.
 - The README's usage example now uses `actions/checkout@v7`, the same version as the test workflow, so people who copy it get the current version.
+- Moved the "try the Action by hand" paragraph in `CLAUDE.md` below the Files list, where it had split the list before the `ACR.md` bullet.
 
 ## 2026-10-12: Dependabot, No Release
 

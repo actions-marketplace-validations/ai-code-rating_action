@@ -26,9 +26,9 @@ Never edit `lib/` here. Change the checks or levels in the site repo, re-sync, t
 - `.github/workflows/test.yml`: runs the tests, then the Action on this repo's own `ACR.md`.
 - `.github/dependabot.yml`: monthly grouped updates for the actions in the test workflow. These don't touch the Action itself, so they aren't a release.
 - `CHANGELOG.md`: date-grouped entries headed `## YYYY-MM-DD: vX.Y.Z, Title`, or `No Release` in place of the version when nothing users run has changed.
+- `ACR.md`: this project's own rating. Keep its `updated` date current.
 
 To try the Action by hand on a folder: `GITHUB_WORKSPACE=/path/to/repo node index.cjs`. Without `GITHUB_OUTPUT` and `GITHUB_STEP_SUMMARY` set, it only prints the annotations and verdict.
-- `ACR.md`: this project's own rating. Keep its `updated` date current.
 
 ## Releases
 
