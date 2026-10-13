@@ -1,8 +1,15 @@
 # Changelog
 
+## 2026-10-12: Licence and CLAUDE.md, No Release
+
+- Added the email address to the copyright line in `LICENSE`, so it reads `Copyright (c) 2026 Greg Chetcuti <greg@chetcuti.com>`.
+- Filled gaps in `CLAUDE.md`: the shape of the results the checks return, how the test cases are laid out, how to run the Action by hand, and what `dependabot.yml` and `CHANGELOG.md` are for. It also says the Claude Code commit trailer is only for commits where Claude changed code. Docs only, so there's no new release.
+- The README's usage example now uses `actions/checkout@v7`, the same version as the test workflow, so people who copy it get the current version.
+
 ## 2026-10-12: Dependabot, No Release
 
 - Added `.github/dependabot.yml` so Dependabot checks the actions used in `.github/workflows/test.yml` (`actions/checkout` and `actions/setup-node`) once a month and opens one grouped pull request when new versions are out. New releases wait 7 days before they're proposed. Security fixes come as their own pull requests and don't wait. Its updates only touch the repo's own test workflow, not the Action, so there's no new release.
+- The test workflow now uses `actions/checkout@v7` and `actions/setup-node@v6` (both were `v5`), from Dependabot's first pull request (#1), made here instead of merged. Neither change affects this workflow: checkout v7 blocks checking out fork pull requests in `pull_request_target` and `workflow_run` workflows, which this one doesn't use. The tests pass, and so did the pull request's own run with the new versions.
 
 ## 2026-10-09: v1.0.1, Synced Wording
 
